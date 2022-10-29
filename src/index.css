@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    @apply text-primary;
+  }
+  body {
+    @apply m-0 flex flex-col items-center min-h-screen;
+  }
+}
