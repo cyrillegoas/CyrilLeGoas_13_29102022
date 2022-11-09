@@ -4,9 +4,10 @@ module.exports = {
     colors: {
       primary: '#2c3e50',
       accent: '#00bc77',
-      'dark-bg': '#12002b',
+      dark: '#12002b',
       white: '#FFFFFF',
       black: '#222222',
+      grey: '#cccccc',
     },
     screens: {
       md: '920px',
