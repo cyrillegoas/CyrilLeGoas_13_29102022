@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { UserIcon } from './UserIcon';
 
 export function Header() {
   return (
@@ -14,7 +15,7 @@ export function Header() {
       </Link>
       <nav className="mr-2">
         <Link to="/login" className="flex items-center gap-2 font-bold">
-          <img src="/icons/icon-user.svg" alt="" className="w-[16px]" />
+          <UserIcon />
           Sign In
         </Link>
       </nav>
