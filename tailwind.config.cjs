@@ -11,6 +11,7 @@ module.exports = {
       red: '#FF1B1C',
     },
     screens: {
+      sm: '720px',
       md: '920px',
     },
     extend: {},
