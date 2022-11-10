@@ -7,7 +7,7 @@ export function LoginForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate('/user');
+    navigate('/profile');
   };
 
   return (
