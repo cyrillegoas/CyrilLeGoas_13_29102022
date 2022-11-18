@@ -30,7 +30,7 @@ const userReducer = (user = initialState.user, action) => {
   }
 };
 
-const accountReducer = (state) => state;
+const accountReducer = (account = initialState.account) => account;
 
 export const reducer = combineReducers({
   user: userReducer,
