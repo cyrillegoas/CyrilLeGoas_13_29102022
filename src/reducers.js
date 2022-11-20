@@ -6,7 +6,7 @@ const initialState = {
     firstName: '',
     lastName: '',
     jwt: '',
-    isloggedIn: false,
+    isLoggedIn: false,
   },
   account: {
     ids: [],
@@ -16,7 +16,7 @@ const initialState = {
 const userReducer = (user = initialState.user, action) => {
   switch (action.type) {
     case LOGIN:
-      return { ...user, jwt: action.payload, isloggedIn: true };
+      return { ...user, jwt: action.payload, isLoggedIn: true };
     case LOGOUT:
       return { ...initialState.user };
     case UPDATEUSERNAME:
