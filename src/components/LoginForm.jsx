@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useFetch } from '../hooks/useFetch';
+import { useFetchCallback } from '../hooks/useFetchCallback';
 import { useForm } from '../hooks/useForm';
 import { login } from '../actions';
 import { UserIcon } from './UserIcon';
@@ -10,7 +10,7 @@ export function LoginForm() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [values, handleChange] = useForm({ email: '', password: '' });
-  const { fetchCall, data, error } = useFetch(
+  const { fetchCall, data, error } = useFetchCallback(
     'http://localhost:3001/api/v1/user/login'
   );
 
