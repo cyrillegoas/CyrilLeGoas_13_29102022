@@ -18,5 +18,5 @@ export const useFetchCallback = (url) => {
     [url]
   );
 
-  return { fetchCall, data, error };
+  return { fetchCall, data, error, setError };
 };
