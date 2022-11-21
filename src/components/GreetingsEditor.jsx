@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './Button';
 
-export function GreetingEditor({ setEdit }) {
+export function GreetingEditor({ setEdit, user }) {
   return (
     <form className="flex flex-col gap-4 md:grid md:grid-cols-2 ">
       <label htmlFor="firstname" className="sr-only">
@@ -11,7 +11,7 @@ export function GreetingEditor({ setEdit }) {
         type="text"
         name="firstname"
         id="firstname"
-        placeholder="Tony"
+        placeholder={user.firstName}
         className="p-[5px] text-[1.2rem] border-[1px] border-grey rounded w-[250px]"
       />
 
@@ -22,7 +22,7 @@ export function GreetingEditor({ setEdit }) {
         type="text"
         name="lastname"
         id="lastname"
-        placeholder="Jarvis"
+        placeholder={user.lastName}
         className="p-[5px] text-[1.2rem] border-[1px] border-grey rounded w-[250px]"
       />
       <Button

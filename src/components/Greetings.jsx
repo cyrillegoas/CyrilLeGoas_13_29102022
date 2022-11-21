@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { GreetingEditor } from './GreetingsEditor';
 import { Button } from './Button';
 
-export function Greeting() {
+export function Greeting({ user }) {
   const [edit, setEdit] = useState(false);
 
   return (
@@ -10,12 +10,12 @@ export function Greeting() {
       <h2 className="text-center text-white text-[2rem] font-bold">
         Welcome back
         <br />
-        {!edit ? 'Tony Jarvis!' : null}
+        {!edit ? `${user.firstName} ${user.lastName}!` : null}
       </h2>
       {!edit ? (
         <Button isSubmit text="Edit Name" onClick={() => setEdit(true)} />
       ) : (
-        <GreetingEditor setEdit={setEdit} />
+        <GreetingEditor setEdit={setEdit} user={user} />
       )}
     </section>
   );
