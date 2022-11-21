@@ -5,11 +5,17 @@ import { useFetchCallback } from '../hooks/useFetchCallback';
 import { useForm } from '../hooks/useForm';
 import { login } from '../actions';
 import { UserIcon } from './UserIcon';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 export function LoginForm() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [values, handleChange] = useForm({ email: '', password: '' });
+  const [storedEmail, setStoredEmail] = useLocalStorage('user:email', '');
+  const [remember, setRemember] = useLocalStorage('user:remember', false);
+  const [values, handleChange] = useForm({
+    email: storedEmail,
+    password: '',
+  });
   const { fetchCall, data, error } = useFetchCallback(
     'http://localhost:3001/api/v1/user/login'
   );
@@ -33,6 +39,8 @@ export function LoginForm() {
         password: values.password,
       }),
     });
+    if (remember) setStoredEmail(values.email);
+    else setStoredEmail('');
   };
 
   return (
@@ -74,8 +82,16 @@ export function LoginForm() {
           ) : null}
         </div>
         <div className="w-full flex">
-          <input type="checkbox" id="remember-me" className="mx-1" />
-          <label htmlFor="remember-me">Remember me</label>
+          <input
+            type="checkbox"
+            id="remember"
+            className="mx-1"
+            checked={remember}
+            onChange={(e) => {
+              setRemember(e.target.checked);
+            }}
+          />
+          <label htmlFor="remember">Remember me</label>
         </div>
         <button
           type="submit"
