@@ -58,6 +58,7 @@ export function LoginForm() {
           <input
             type="text"
             id="email"
+            autoComplete="email"
             value={values.email}
             onChange={handleChange}
             className="w-full p-[5px] text-[1.2rem] border-[1px] border-grey rounded"
@@ -73,6 +74,7 @@ export function LoginForm() {
           <input
             type="password"
             id="password"
+            autoComplete="current-password"
             value={values.password}
             onChange={handleChange}
             className="w-full p-[5px] text-[1.2rem] border-[1px] border-grey rounded"
